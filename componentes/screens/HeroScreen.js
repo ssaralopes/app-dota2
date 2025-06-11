@@ -27,7 +27,7 @@ export default function HeroDetails({ route }) {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#0d0d0d', // Fundo escuro, igual ao seu projeto
+    backgroundColor: '#0d0d0d', // Fundo escuro
     flexGrow: 1,
     justifyContent: 'center',
   },
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     marginBottom: 15,
-    // adicionar uma sombra como se fosse mágico
+    // lembrar de adicionar uma sombra para trazer um elemento de magia do universo do jogo, de forma visual 
     boxshadowColor: '#350000',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
