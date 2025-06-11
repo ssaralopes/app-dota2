@@ -4,7 +4,7 @@ Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o o
 
 > Um app mobile feito com **React Native** que permite explorar heróis do Dota 2 via OpenDota API. Inspirado em um grimório digital, com design temático e responsivo.
 
-
+---
 > ⚙️ **Sobre a API**
 >
 > Este projeto utiliza a [OpenDota API](https://docs.opendota.com/) para buscar informações sobre os heróis do jogo Dota 2.
