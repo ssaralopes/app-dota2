@@ -30,8 +30,8 @@ Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o o
 
 > “Para um trabalho da faculdade, o desafio foi desenvolver um aplicativo mobile utilizando React Native e React Navigation.  
 > A proposta consistia em consumir dados de uma API pública de forma criativa e funcional, apresentando informações relevantes de forma interativa.”
->
-> Neste projeto, o universo escolhido foi o do jogo Dota 2, onde os heróis são tratados como entidades lendárias — cada um com seus atributos, histórias e especialidades. O aplicativo convida o usuário a navegar por esse catálogo mítico. A ideia proposta nesta atividade, foi explorar a API OpenDota para listar heróis e apresentar suas informações básicas, criando uma experiência envolvente e temática.
+
+Neste projeto, o universo escolhido foi o do jogo **Dota 2**, onde os heróis são tratados como entidades lendárias — cada um com seus **atributos, histórias** e **especialidades**. O aplicativo convida o usuário a navegar por esse **catálogo mítico**. A ideia proposta no Enunciado desta atividade, foi explorar a **API OpenDota** para listar heróis e apresentar suas informações básicas, criando uma experiência envolvente e temática.
 
 ---
 
