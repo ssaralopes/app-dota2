@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#6a0202', // Fundo vermelho escuro do card
     borderRadius: 16,
     padding: 20,
+    borderColor: '#ff4d4d', // 🔴 borda vermelha mais vibrante
     alignItems: 'center',
     shadowColor: '#ff0000', // Sombra sutil
     shadowOffset: { width: 0, height: 4 },

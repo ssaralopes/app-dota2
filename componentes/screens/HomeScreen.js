@@ -41,24 +41,38 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     flex: 1,
-    padding: 16, 
-    backgroundColor: '#1e1e1e' 
+    padding: 16,
+    backgroundColor: '#121212', // fundo preto quase puro para destacar as cores
   },
-  center:    { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center' 
+  center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  item:      { 
-    padding: 12, 
-    borderBottomWidth: 1, 
-    borderColor: '#333' 
+  item: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 50,
+    marginBottom: 12,
+    marginHorizontal: 20,
+    backgroundColor: '#d92525', // 🔴 vermelho muito escuro, quase preto
+    borderWidth: 1,
+    borderColor: '#ff4d4d', // 🔴 borda vermelha mais vibrante
+    shadowColor: '#ff1a1a', // 🔴 leve brilho vermelho
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 6,
+    alignItems: 'center',
   },
-  text:      { 
-    fontSize: 16, 
-    color: '#fff' 
-  },
+  text: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#fff',
+    letterSpacing: 1,
+  }
+
 
 });
