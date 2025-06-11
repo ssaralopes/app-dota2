@@ -1,106 +1,113 @@
-# 🔍 GitHub User Search
+# 🧙‍♂️ Dota 2 Hero Explorer
 
-Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o objetivo de **praticar o consumo de APIs públicas** dentro de uma aplicação, utilizando **React Navigation**.
+Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o objetivo de praticar o consumo de APIs públicas, utilizando **React Navigation** para navegação entre telas.
+
+> Um app mobile feito com **React Native** que permite explorar heróis do Dota 2 via OpenDota API. Inspirado em um grimório digital, com design temático e responsivo.
+
 
 > ⚙️ **Sobre a API**
 >
-> Este projeto utiliza a [API pública de usuários do GitHub](https://docs.github.com/pt/rest/users/users?apiVersion=2022-11-28#get-a-user) para consultar informações públicas de qualquer usuário.
+> Este projeto utiliza a [OpenDota API](https://docs.opendota.com/) para buscar informações sobre os heróis do jogo Dota 2.
 >
-> A consulta é feita via requisição HTTP GET ao seguinte endpoint:
+> A consulta é feita por meio de uma requisição HTTP GET ao seguinte endpoint:
 >
 > ```
-> https://api.github.com/users/NOME_DO_USUARIO
+> https://api.opendota.com/api/heroStats
 > ```
 >
-> A resposta retorna um objeto JSON com diversas informações, incluindo:
+> A resposta retorna um array de objetos contendo diversos atributos de cada herói, incluindo:
 >
-> - `avatar_url`: URL do avatar (foto de perfil)
-> - `name`: Nome completo do usuário
-> - `login`: Nome de usuário (username)
-> - `bio`: Biografia pública
-> - `public_repos`: Número de repositórios públicos
-> - `followers`: Total de seguidores
-> - `following`: Total de usuários seguidos
->
-
+> - `localized_name`: Nome do herói
+> - `img`: Imagem (ícone)
+> - `primary_attr`: Atributo principal (`str`, `agi`, `int`, `all`)
+> - `attack_type`: Tipo de ataque (`Melee` ou `Ranged`)
+> - `roles`: Papeis possíveis do herói (ex: Support, Carry, Nuker)
+> - `base_health`: Vida base do herói
+> - `move_speed`: Velocidade de movimento
 
 ---
 
 ## 📜 Descrição da Proposta
 
-> “Para um trabalho da faculdade, o desafio proposto foi desenvolver um aplicativo mobile utilizando React Native e React Navigation Stack.  
-> A ideia seria implementar um componente trabalhado anteriormente em aula, com o objetivo de praticar o consumo de APIs REST dentro de um ambiente React Native e React Navigation”
+> “Para um trabalho da faculdade, o desafio foi desenvolver um aplicativo mobile utilizando React Native e React Navigation.  
+> A proposta consistia em consumir dados de uma API pública de forma criativa e funcional, apresentando informações relevantes de forma interativa.”
+>
+> Neste projeto, o universo escolhido foi o do jogo Dota 2, onde os heróis são tratados como entidades lendárias — cada um com seus atributos, histórias e especialidades. O aplicativo convida o usuário a navegar por esse catálogo mítico. A ideia proposta nesta atividade, foi explorar a API OpenDota para listar heróis e apresentar suas informações básicas, criando uma experiência envolvente e temática.
 
 ---
 
 ## 🎨 Design e Estilo
-A proposta visual deste projeto foi pensada para ir além da funcionalidade técnica. A escolha da paleta de cores roxa remete à ideia de mistério, introspecção e descoberta — alinhando-se à proposta da aplicação: consultar e revelar informações públicas de usuários do GitHub por meio de uma API. O fundo escuro contrasta com tons lavanda e púrpura mais claros, trazendo harmonia e um toque místico à experiência do usuário.
+Inspirado pela estética do universo de Dota 2, a identidade visual do app mistura tons escuros, avermelhados e elementos arredondados para criar uma interface que remete a um grimório digital de heróis. A experiência combina o tom técnico da consulta a dados com a imersão visual de um mundo de fantasia e estratégia.
 
-> Elementos visuais como textos com tonalidades suaves, bordas arredondadas e ícones sutis reforçam a identidade visual, criando uma interface intuitiva, elegante e agradável.
+> Abaixo do logotipo do jogo, uma breve descrição convida o usuário a mergulhar no mundo dos heróis, como se estivesse desbravando arquivos secretos da guerra entre as antigas forças de Radiant e Dire.
 
 ---
 
 ### 🎨🖼️ Elementos de Estilo
 
-- **🎨 Paleta de Cores**  
-  - `#2e003e` – fundo principal, trazendo profundidade e destaque ao conteúdo.  
-  - `#3e065f` – fundo de cartões e campos de entrada, para suavizar a transição visual.  
-  - `#9f5afd` – roxo vibrante usado em botões e bordas, como cor de ação.  
-  - `#d8b4fe` – lavanda clara usada para textos informativos e placeholder, equilibrando contraste e leveza.  
-  - `#ffffff` – branco para leitura principal e melhor legibilidade.  
-  - `#ff6b81` – vermelho suave para feedback de erro, mantendo a consistência visual.
+- **🎨 Paleta de Cores**
+  - `#0d0d0d` – fundo principal, simulando uma arena sombria.
+  - `#1a1a1a` – cartões e painéis, para diferenciar seções com sutileza.
+  - `#ff4d4d` – vermelho intenso usado em destaques, bordas e sombras.
+  - `#b3b3b3` – cinza claro para textos informativos.
+  - `#ffffff` – branco puro para contrastes principais.
 
 - **🧩 Componentes Personalizados**  
-  - Bordas dos inputs e botões com `borderRadius: 20`, proporcionando um visual mais fluido e amigável.  
-  - Avatar do usuário com moldura circular e destaque em roxo claro.  
-  - Ícone "🔮" no título como toque lúdico e simbólico da ideia de "consultar" algo oculto ou especial.
-
+   - Avatar/logo do Dota 2 com borda circular vermelha e sombra mágica.
+  - Tipografia clara com espaçamento confortável.
+  - Lista dos heróis com toque interativo (TouchableOpacity) e transição suave.
+  - Tela de detalhes com imagem e atributos principais destacados.
+  - Scroll da lista de heróis com `showsVerticalScrollIndicator={false}` para esconder a barra lateral padrão, oferecendo uma aparência mais limpa e imersiva.
+  - Introdução abaixo do logo como convite ao universo do jogo, em tom narrativo/fantástico.
 ---
 
 ## 💡 Funcionalidades
-- Campo de input para digitar o nome do usuário do GitHub.
-- Botão Consultar que dispara a chamada da API.
-- Exibição dos dados do usuário:
-    - Avatar
-    - Nome
-    - Nome de usuário 
-    - Bio
-    - Número de repositórios públicos
-    - Seguidores
-    - Seguindo
-    - Feedback visual de carregamento e mensagens de erro.
+-  Tela inicial com logo animada e descrição do projeto.
+- Lista completa dos heróis de Dota 2, exibindo seus nomes.
+- Navegação para a tela de detalhes do herói:
+  - Nome e imagem
+  - Atributo principal
+  - Tipo de ataque
+  - Funções (roles)
+  - Dois atributos extras escolhidos pela Aluna
+- Carregamento com feedback visual.
+- Interface pensada para mobile (UX responsivo).
 
 ---
 
 ## 📱 Tecnologias Utilizadas
 
-- 🧠 React Native
+- ⚛️ React Native
 - 🔗 Expo
-- 🐈‍⬛ GitHub REST API
+- 🧙‍♀️ OpenDota REST API
 - 💻 JavaScript
 - ⚙️ Node.js
+- 🧭 React Navigation
 - 🎨 Estilização com StyleSheet do React Native
 
 ---
 
 ## 🗂️ Estrutura do Projeto
 ```bash
-📁 AppReactNav
-┣ 📁 .expo
+
+📁 AppDota2
 ┣ 📁 componentes
-┃ ┣ 📁 Evento.js // Código desenvolvido pelo professor em aula anterior.
-┃ ┗ 📁 UsuarioGitHub.js // Código desenvolvido pelo professor em aula anterior.
-┣ App.js → Arquivo principal e resolução da Atividade proposta.
-┣ Index.js 
+┃ ┣ 📁 img
+┃ ┃  ┗ 🖼️ image.png // Logo do Jogo Dota
+┃ ┗ 📁 screens
+┃   ┣ 📄 HomeScreen.js // Lista de heróis
+┃   ┗ 📄 DetailsScreen.js // Detalhes do herói selecionado
+┣ App.js → Entrada principal do app com navegação
+┣ babel.config.js
 ┗ README.md → Este documento
-```
+
 ---
 
 ## 🔧 Como Executar
 
 ### 1️⃣ Clone este repositório:
 ```bash
-git clone https://github.com/ssaralopes/github-user-search.git
+git clone https://github.com/ssaralopes/app-dota2.git
 ```
 ### 2️⃣ Instale as dependências:
 ```bash
@@ -124,6 +131,8 @@ npx expo start
 
 ## 📄 Observações
 Este projeto foi desenvolvido com fins educacionais, como parte de um desafio acadêmico para prática de desenvolvimento mobile com React Native e implementação de APIs Rest.
+> Este projeto não é afiliado ao Dota 2 ou à Valve Corporation. Todos os dados são fornecidos pela [OpenDota API](https://www.opendota.com/), de uso público.
+
 
  > **Por limitações da plataforma de envio, o projeto foi disponibilizado via GitHub.**
 
