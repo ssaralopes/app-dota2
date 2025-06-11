@@ -99,7 +99,7 @@ Inspirado pela estética do universo de Dota 2, a identidade visual do app mistu
 ┣ App.js → Entrada principal do app com navegação
 ┣ babel.config.js
 ┗ README.md → Este documento
-
+```
 ---
 
 ## 🔧 Como Executar
