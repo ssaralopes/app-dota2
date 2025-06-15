@@ -1,8 +1,8 @@
 # 🧙‍♂️ Dota 2 Hero Explorer
 
-Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o objetivo de praticar o consumo de APIs públicas, utilizando **React Navigation** para navegação entre telas.
+Este é um aplicativo mobile desenvolvido em **React Native** e **Expo** com o objetivo de praticar o consumo de APIs públicas, utilizando **React Navigation** para navegação entre telas. O projeto apresenta o desenvolvimento de um app mobile, que permite explorar heróis do Dota 2 via OpenDota API. Inspirado em um grimório digital, com design temático e responsivo. ⚔️📜🔮🌿✨
 
-> Um app mobile feito com **React Native** que permite explorar heróis do Dota 2 via OpenDota API. Inspirado em um grimório digital, com design temático e responsivo.
+---
 
 > ⚙️ **Sobre a API**
 >
